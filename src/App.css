@@ -1,0 +1,398 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f5f5f5;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.tool-palette {
+  width: 80px;
+  background-color: #2c2c2c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 5px;
+  gap: 10px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.tool-button {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 8px;
+  background-color: #404040;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: all 0.2s ease;
+}
+
+.tool-button:hover {
+  background-color: #505050;
+  transform: scale(1.05);
+}
+
+.tool-button.active {
+  background-color: #007acc;
+  box-shadow: 0 0 10px rgba(0, 122, 204, 0.5);
+}
+
+.size-slider-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.size-slider {
+  writing-mode: bt-lr; /* IE */
+  writing-mode: vertical-lr; /* Standard */
+  width: 20px;
+  height: 100px;
+  background: #404040;
+  outline: none;
+  border-radius: 10px;
+}
+
+.size-value {
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.canvas-container {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background-color: white;
+}
+
+.drawing-canvas {
+  display: block;
+  cursor: crosshair;
+}
+
+.grid-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.color-palette {
+  height: 60px;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  gap: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.color-button {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.color-button:hover {
+  transform: scale(1.1);
+}
+
+.color-button.active {
+  border-color: #007acc;
+  box-shadow: 0 0 10px rgba(0, 122, 204, 0.5);
+}
+
+.custom-color-input {
+  width: 50px;
+  height: 30px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.top-bar {
+  height: 50px;
+  background-color: #2c2c2c;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  color: white;
+}
+
+.top-bar-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.top-bar-button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #404040;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.top-bar-button:hover {
+  background-color: #505050;
+}
+
+.top-bar-button:active {
+  transform: scale(0.95);
+}
+
+.app-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.layer-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.layer-select {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  background-color: #404040;
+  color: white;
+  font-size: 12px;
+}
+
+.grid-toggle {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+}
+
+.grid-checkbox {
+  width: 16px;
+  height: 16px;
+}
+
+/* Additional styling for better UI */
+.tool-separator {
+  height: 2px;
+  background-color: #555;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.size-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #007acc;
+  cursor: pointer;
+}
+
+.size-slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #007acc;
+  cursor: pointer;
+  border: none;
+}
+
+.color-button:focus {
+  outline: 2px solid #007acc;
+  outline-offset: 2px;
+}
+
+.tool-button:focus {
+  outline: 2px solid #007acc;
+  outline-offset: 2px;
+}
+
+.top-bar-button:focus {
+  outline: 2px solid #007acc;
+  outline-offset: 2px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .tool-palette {
+    width: 60px;
+    padding: 5px 2px;
+  }
+  
+  .tool-button {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+  
+  .color-palette {
+    height: 50px;
+    padding: 0 10px;
+    overflow-x: auto;
+  }
+  
+  .color-button {
+    width: 25px;
+    height: 25px;
+    flex-shrink: 0;
+  }
+  
+  .top-bar {
+    height: 45px;
+    padding: 0 10px;
+  }
+  
+  .top-bar-section {
+    gap: 10px;
+  }
+  
+  .top-bar-button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+  
+  .app-title {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tool-palette {
+    width: 50px;
+  }
+  
+  .tool-button {
+    width: 35px;
+    height: 35px;
+    font-size: 12px;
+  }
+  
+  .color-palette {
+    height: 45px;
+    padding: 0 5px;
+  }
+  
+  .color-button {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .top-bar {
+    height: 40px;
+    padding: 0 5px;
+  }
+  
+  .top-bar-button {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+  
+  .app-title {
+    font-size: 14px;
+  }
+  
+  .layer-controls {
+    gap: 5px;
+  }
+}
+
+/* Loading and error states */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 18px;
+  color: #666;
+}
+
+.error {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 10px;
+  border: 1px solid #ef9a9a;
+}
+
+/* Accessibility improvements */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Animation for smooth interactions */
+.tool-button,
+.color-button,
+.top-bar-button {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tool-button:active,
+.color-button:active,
+.top-bar-button:active {
+  transform: scale(0.95);
+}
+
+/* Canvas styling improvements */
+.canvas-container {
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+  background-image: 
+    linear-gradient(45deg, #f5f5f5 25%, transparent 25%), 
+    linear-gradient(-45deg, #f5f5f5 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, #f5f5f5 75%), 
+    linear-gradient(-45deg, transparent 75%, #f5f5f5 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+.drawing-canvas {
+  background-color: white;
+  border-radius: 0;
+}
+
+/* Improved text input styling */
+.text-input-overlay {
+  position: absolute;
+  z-index: 1000;
+  background: transparent;
+  border: 2px dashed #007acc;
+  outline: none;
+  font-family: Arial, sans-serif;
+  padding: 2px 4px;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 122, 204, 0.3);
+}
