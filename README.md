@@ -8,14 +8,10 @@ A feature-rich canvas-based drawing application built with React and HTML5 Canva
 
 ### 📹 Video Demo
 
-**To see the video preview:**
-1. Go to [GitHub repository](https://github.com/chirag-gupta7/Whiteboard-APP)
-2. Click "Edit" on this README
-3. Drag and drop the `Demo.mp4` file into the editor
-4. GitHub will auto-generate a video URL
-5. Save the changes
+<video src="https://github.com/chirag-gupta7/Whiteboard-APP/raw/main/Demo.mp4" controls="controls" style="max-width: 730px;">
+</video>
 
-**Or download the video:** [Demo.mp4](https://github.com/chirag-gupta7/Whiteboard-APP/raw/main/Demo.mp4)
+> **Note:** If the video doesn't display above, [click here to watch Demo.mp4](https://github.com/chirag-gupta7/Whiteboard-APP/raw/main/Demo.mp4)
 
 ## Features
 
