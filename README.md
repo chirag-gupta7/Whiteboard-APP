@@ -2,6 +2,12 @@
 
 A feature-rich canvas-based drawing application built with React and HTML5 Canvas API.
 
+## Demo
+
+https://github.com/chirag-gupta7/Whiteboard-APP/assets/Demo.mp4
+
+[📹 Watch Demo Video](./Demo.mp4)
+
 ## Features
 
 ### Drawing Tools
